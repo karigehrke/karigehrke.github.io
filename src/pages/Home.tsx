@@ -79,7 +79,7 @@ const Home = () => {
             {...fadeInUp}
             transition={{ delay: 0.9 }}
           >
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
+            <a href="https://github.com/karigehrke" target="_blank" rel="noopener noreferrer" 
                className="text-slate-400 hover:text-white transition-colors p-2 hover:scale-110 transform">
               <Github className="h-6 w-6" />
             </a>

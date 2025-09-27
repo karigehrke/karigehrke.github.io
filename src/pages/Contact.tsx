@@ -238,7 +238,7 @@ const Contact = () => {
               <h3 className="text-lg font-semibold text-white mb-4">Find me online</h3>
               <div className="flex gap-4">
                 {[
-                  { icon: Github, href: 'https://github.com', label: 'GitHub' },
+                  { icon: Github, href: 'https://github.com/karigehrke', label: 'GitHub' },
                   { icon: Linkedin, href: 'https://www.linkedin.com/in/kari-gehrke/', label: 'LinkedIn' },
                   { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' }
                 ].map((social) => (
