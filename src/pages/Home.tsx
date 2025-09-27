@@ -56,19 +56,19 @@ const Home = () => {
           >
             <Link 
               to="/projects"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 border-2 border-blue-600 hover:border-blue-700 min-w-[160px] h-[50px] flex items-center justify-center"
             >
               View My Work
             </Link>
             
             <Link 
               to="/contact"
-              className="bg-transparent border-2 border-slate-500 hover:border-white text-slate-300 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105"
+              className="bg-transparent border-2 border-slate-500 hover:border-white text-slate-300 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 min-w-[160px] h-[50px] flex items-center justify-center"
             >
               Get In Touch
             </Link>
 
-            <button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-amber-500/25 flex items-center gap-2">
+            <button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-amber-500/25 border-2 border-amber-600 hover:border-amber-700 min-w-[160px] h-[50px] flex items-center justify-center gap-2">
               <Download className="h-4 w-4" />
               Resume
             </button>
