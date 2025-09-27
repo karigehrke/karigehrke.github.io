@@ -70,7 +70,7 @@ const About = () => {
                   <Palette className="h-8 w-8 text-purple-400" />
                   <div>
                     <h3 className="font-semibold text-white">Design Background</h3>
-                    <p className="text-slate-400 text-sm">5+ years in graphic design</p>
+                    <p className="text-slate-400 text-sm">6+ years in graphic design</p>
                   </div>
                 </motion.div>
                 
