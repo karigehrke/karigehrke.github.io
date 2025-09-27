@@ -181,7 +181,7 @@ const About = () => {
             {[
               {
                 title: 'User-Centered Design',
-                description: 'Every line of code should serve the user. I prioritize accessibility, usability, and delightful experiences.',
+                description: 'I believe the best user experiences come from close collaboration between design, product, and engineering teams. My background in both design and development helps me bridge that gap and advocate for what users really need.',
                 icon: Users,
               },
               {
