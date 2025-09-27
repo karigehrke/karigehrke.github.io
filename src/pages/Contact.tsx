@@ -239,7 +239,7 @@ const Contact = () => {
               <div className="flex gap-4">
                 {[
                   { icon: Github, href: 'https://github.com', label: 'GitHub' },
-                  { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+                  { icon: Linkedin, href: 'https://www.linkedin.com/in/kari-gehrke/', label: 'LinkedIn' },
                   { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' }
                 ].map((social) => (
                   <motion.a
