@@ -81,7 +81,7 @@ const About = () => {
                   <Code className="h-8 w-8 text-blue-400" />
                   <div>
                     <h3 className="font-semibold text-white">Development Skills</h3>
-                    <p className="text-slate-400 text-sm">3+ years in frontend development</p>
+                    <p className="text-slate-400 text-sm">6+ years in frontend development</p>
                   </div>
                 </motion.div>
                 
