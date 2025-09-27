@@ -45,20 +45,23 @@ const About = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
               <div>
                 <p className="text-slate-300 leading-relaxed mb-6">
-                  I began my career as a graphic designer, spending years crafting visual identities, 
-                  layouts, and user experiences. This foundation gave me a deep appreciation for 
-                  typography, color theory, and the psychology of design.
+                  I'm a frontend developer with 6+ years of experience building scalable, user-friendly 
+                  applications, following a prior career as a graphic designer. I bring a unique blend 
+                  of design expertise and technical skill to create intuitive, reliable, and visually 
+                  cohesive interfaces.
                 </p>
                 
                 <p className="text-slate-300 leading-relaxed mb-6">
-                  The transition to frontend development felt natural – I was already thinking about 
-                  user experience, just now I could bring those designs to life with code. This unique 
-                  background allows me to bridge the gap between design and development teams.
+                  My journey began in graphic design at N2 Publishing, where I spent 6 years crafting 
+                  layouts and advertisements for regional and national publications. This foundation 
+                  gave me a deep appreciation for visual hierarchy, brand consistency, and user experience.
                 </p>
 
                 <p className="text-slate-300 leading-relaxed">
-                  Today, I combine my design expertise with modern web technologies to create 
-                  interfaces that are not only functional but also delightful to use.
+                  Today, I'm passionate about solving complex problems with clean code and delivering 
+                  digital experiences that inspire trust and empower users. At Red Ventures, I lead 
+                  frontend development for major energy marketplace platforms, building scalable 
+                  applications that serve millions of users.
                 </p>
               </div>
               
@@ -116,36 +119,28 @@ const About = () => {
           <div className="space-y-12">
             {[
               {
-                title: 'Senior Frontend Engineer',
-                company: 'Tech Company',
-                period: '2023 - Present',
-                description: 'Leading frontend development for complex web applications, mentoring junior developers, and establishing design systems.',
+                title: 'Frontend Developer',
+                company: 'Red Ventures',
+                period: 'August 2021 - Present',
+                description: 'Lead frontend developer for shop.energyharbor.com and shop.trieagleenergy.com, delivering scalable web applications. Built reusable Solar Lead form widget used across major platforms. Partnered on full site rebuild of saveonenergy.com using React, Next.js, TypeScript, and Tailwind.',
                 icon: Code,
                 color: 'blue'
               },
               {
-                title: 'Frontend Developer',
-                company: 'Digital Agency',
-                period: '2022 - 2023',
-                description: 'Developed responsive websites and web applications using React, TypeScript, and modern CSS frameworks.',
+                title: 'Full-Stack Software Engineer',
+                company: 'HealthSpace Data Systems Ltd',
+                period: 'June 2019 - August 2021',
+                description: 'Built and maintained scalable code using HTML, CSS, JavaScript, and Vue.js. Collaborated with teams to develop web applications for health departments. Designed mockups and wireframes with focus on modern UI/UX best practices.',
                 icon: Users,
                 color: 'purple'
               },
               {
-                title: 'Junior Frontend Developer',
-                company: 'Startup',
-                period: '2021 - 2022',
-                description: 'Transitioned from design to development, building UI components and implementing designs with pixel-perfect precision.',
-                icon: Lightbulb,
-                color: 'amber'
-              },
-              {
                 title: 'Graphic Designer',
-                company: 'Design Studio',
-                period: '2018 - 2021',
-                description: 'Created visual identities, marketing materials, and UI designs for various clients across different industries.',
+                company: 'N2 Publishing',
+                period: 'July 2013 - June 2019',
+                description: 'Designed and delivered layouts and advertisements for multiple regional and national publications. Reviewed and refined team members\' work to ensure quality and brand standards. Mentored designers and maintained workflow efficiency.',
                 icon: Palette,
-                color: 'pink'
+                color: 'amber'
               }
             ].map((item, index) => (
               <motion.div
