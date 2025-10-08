@@ -33,13 +33,13 @@ const Projects = () => {
       category: 'Widget'
     },
     {
-      title: 'Portfolio Redesign',
-      description: 'Complete visual identity and website redesign for a local business, including logo design, brand guidelines, and responsive website.',
-      image: 'https://images.pexels.com/photos/196645/pexels-photo-196645.jpeg',
-      technologies: ['Figma', 'HTML/CSS', 'JavaScript', 'Adobe Creative Suite'],
+      title: 'UltraCrew',
+      description: 'Ultramarathon crew logistics management application. Clean, intuitive interface for managing race details, runner information, and crew coordination with comprehensive form validation and user-friendly design.',
+      image: '/crew-app-image.png',
+      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Form Validation'],
       liveUrl: '#',
       githubUrl: '#',
-      category: 'Design + Dev'
+      category: 'Web App'
     },
     {
       title: 'Mobile App UI',
