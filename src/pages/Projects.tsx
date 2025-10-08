@@ -14,13 +14,13 @@ const Projects = () => {
       category: 'Lead Frontend'
     },
     {
-      title: 'Design System Library',
-      description: 'Comprehensive UI component library with Storybook documentation, automated testing, and npm distribution for consistent design across products.',
-      image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg',
-      technologies: ['React', 'Storybook', 'Jest', 'CSS-in-JS', 'Rollup'],
-      liveUrl: '#',
+      title: 'Energy Harbor Marketplace',
+      description: 'Lead frontend developer for shop.energyharbor.com, a comprehensive clean energy marketplace platform. Built scalable web application with modern React architecture and responsive design.',
+      image: '/eh-image.png',
+      technologies: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS'],
+      liveUrl: 'https://shop.energyharbor.com/',
       githubUrl: '#',
-      category: 'Design System'
+      category: 'Lead Frontend'
     },
     {
       title: 'Task Management App',
