@@ -7,7 +7,7 @@ const Projects = () => {
     {
       title: 'Tri Eagle Energy Marketplace',
       description: 'Lead frontend developer for shop.trieagleenergy.com, a comprehensive energy marketplace platform. Built scalable web application with modern React architecture and responsive design.',
-      image: 'https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg',
+      image: '/Screenshot 2025-10-08 at 2.07.36 PM.png',
       technologies: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS'],
       liveUrl: 'https://shop.trieagleenergy.com/',
       githubUrl: '#',
