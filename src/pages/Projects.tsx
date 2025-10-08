@@ -27,6 +27,7 @@ const Projects = () => {
       description: 'Reusable solar lead generation widget deployed across major energy platforms including SaveOnEnergy.com. Built with React and TypeScript for seamless integration and optimal user experience.',
       image: '/solar-lead-form.png',
       technologies: ['React', 'TypeScript', 'JavaScript', 'CSS', 'Nx', 'easy-peasy', 'GraphQL'],
+      technologies: ['React', 'TypeScript', 'JavaScript', 'CSS', 'Nx', 'Easy-Peasy', 'GraphQL'],
       liveUrl: 'https://www.saveonenergy.com/solar-energy/solar-estimator/',
       githubUrl: '#',
       category: 'Widget'
