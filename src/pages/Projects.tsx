@@ -53,13 +53,13 @@ const Projects = () => {
       isWIP: true
     },
     {
-      title: 'Data Visualization Dashboard',
-      description: 'Interactive dashboard for complex data visualization with custom charts, real-time updates, and export capabilities.',
-      image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg',
-      technologies: ['React', 'D3.js', 'TypeScript', 'Node.js', 'PostgreSQL'],
-      liveUrl: '#',
+      title: 'SaveOnEnergy.com',
+      description: 'Partnered on full site rebuild of major energy marketplace platform. Built with modern React architecture, Next.js, TypeScript, and Tailwind CSS to serve millions of users searching for energy plans.',
+      image: '/soe-image.png',
+      technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
+      liveUrl: 'https://www.saveonenergy.com/',
       githubUrl: '#',
-      category: 'Data Viz'
+      category: 'Lead Frontend'
     }
   ];
 
