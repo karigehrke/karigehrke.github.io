@@ -8,7 +8,7 @@ const Projects = () => {
       title: 'TriEagle Energy Marketplace',
       description: 'Lead frontend developer for shop.trieagleenergy.com, a comprehensive energy marketplace platform. Built scalable web application with modern React architecture and responsive design.',
       image: '/tee-image.png',
-      technologies: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS'],
+      technologies: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'Cypress'],
       liveUrl: 'https://shop.trieagleenergy.com/',
       githubUrl: '#',
       category: 'Lead Frontend'
@@ -17,7 +17,7 @@ const Projects = () => {
       title: 'Energy Harbor Marketplace',
       description: 'Lead frontend developer for shop.energyharbor.com, serving customers across Midwest and Northeast states. Developed a comprehensive clean energy marketplace focused on carbon-free energy plans with intuitive user experience and seamless plan comparison features.',
       image: '/eh-image.png',
-      technologies: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS'],
+      technologies: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'Cypress'],
       liveUrl: 'https://shop.energyharbor.com/',
       githubUrl: '#',
       category: 'Lead Frontend'
@@ -26,7 +26,7 @@ const Projects = () => {
       title: 'Solar Lead Form Widget',
       description: 'Reusable solar lead generation widget deployed across major energy platforms including SaveOnEnergy.com. Built with React and TypeScript for seamless integration and optimal user experience.',
       image: '/solar-lead-form.png',
-      technologies: ['React', 'TypeScript', 'JavaScript', 'CSS'],
+      technologies: ['React', 'TypeScript', 'JavaScript', 'CSS', 'Nx', 'easy-peasy', 'GraphQL'],
       liveUrl: 'https://www.saveonenergy.com/solar-energy/solar-estimator/',
       githubUrl: '#',
       category: 'Widget'
