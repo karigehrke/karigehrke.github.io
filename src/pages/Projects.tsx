@@ -39,7 +39,8 @@ const Projects = () => {
       technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Form Validation'],
       liveUrl: '#',
       githubUrl: '#',
-      category: 'Web App'
+      category: 'Web App',
+      isWIP: true
     },
     {
       title: 'PlantCare',
@@ -48,7 +49,8 @@ const Projects = () => {
       technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Local Storage', 'PWA'],
       liveUrl: '#',
       githubUrl: '#',
-      category: 'Web App'
+      category: 'Web App',
+      isWIP: true
     },
     {
       title: 'Data Visualization Dashboard',
@@ -154,7 +156,12 @@ const Projects = () => {
                       alt={project.title}
                       className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                     />
-                    <div className="absolute top-4 right-4">
+                    <div className="absolute top-4 right-4 flex gap-2">
+                      {project.isWIP && (
+                        <div className="bg-amber-500/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                          <span className="text-xs font-semibold text-white">WIP</span>
+                        </div>
+                      )}
                       <div className="bg-slate-900/80 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-2">
                         <IconComponent className="h-4 w-4 text-blue-400" />
                         <span className="text-xs font-semibold text-white">{project.category}</span>
