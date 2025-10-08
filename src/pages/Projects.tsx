@@ -5,7 +5,7 @@ import { ExternalLink, Github, Palette, Code, Smartphone, Globe } from 'lucide-r
 const Projects = () => {
   const projects = [
     {
-      title: 'Tri Eagle Energy Marketplace',
+      title: 'TriEagle Energy Marketplace',
       description: 'Lead frontend developer for shop.trieagleenergy.com, a comprehensive energy marketplace platform. Built scalable web application with modern React architecture and responsive design.',
       image: '/tee-image.png',
       technologies: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS'],
