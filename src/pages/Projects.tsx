@@ -59,7 +59,7 @@ const Projects = () => {
       technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
       liveUrl: 'https://www.saveonenergy.com/',
       githubUrl: '#',
-      category: 'Lead Frontend'
+      category: 'Frontend'
     }
   ];
 
