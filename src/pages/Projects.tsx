@@ -42,13 +42,13 @@ const Projects = () => {
       category: 'Web App'
     },
     {
-      title: 'Mobile App UI',
-      description: 'Complete UI/UX design and React Native development for a fitness tracking app with custom animations and intuitive navigation.',
-      image: 'https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg',
-      technologies: ['React Native', 'Expo', 'Figma', 'Redux', 'Firebase'],
+      title: 'PlantCare',
+      description: 'Plant care management application with intuitive dashboard, watering schedules, and plant health tracking. Features clean UI design with status indicators and personalized care reminders.',
+      image: '/plant-care-image.png',
+      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Local Storage', 'PWA'],
       liveUrl: '#',
       githubUrl: '#',
-      category: 'Mobile'
+      category: 'Web App'
     },
     {
       title: 'Data Visualization Dashboard',
