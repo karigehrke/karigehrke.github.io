@@ -7,11 +7,11 @@ const Projects = () => {
     {
       title: 'Tri Eagle Energy Marketplace',
       description: 'Lead frontend developer for shop.trieagleenergy.com, a comprehensive energy marketplace platform. Built scalable web application with modern React architecture and responsive design.',
-      image: '/Screenshot 2025-10-08 at 2.07.36 PM.png',
+      image: '/Screenshot%202025-10-08%20at%202.07.36%20PM.png',
       technologies: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS'],
       liveUrl: 'https://shop.trieagleenergy.com/',
       githubUrl: '#',
-      category: 'Full-Stack'
+      category: 'Lead Frontend'
     },
     {
       title: 'Design System Library',
@@ -60,7 +60,7 @@ const Projects = () => {
     }
   ];
 
-  const categories = ['All', 'Full-Stack', 'Design System', 'Web App', 'Design + Dev', 'Mobile', 'Data Viz'];
+  const categories = ['All', 'Lead Frontend', 'Design System', 'Web App', 'Design + Dev', 'Mobile', 'Data Viz'];
   const [selectedCategory, setSelectedCategory] = React.useState('All');
 
   const filteredProjects = selectedCategory === 'All' 
@@ -69,7 +69,7 @@ const Projects = () => {
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
-      case 'Full-Stack': return Code;
+      case 'Lead Frontend': return Code;
       case 'Design System': return Palette;
       case 'Mobile': return Smartphone;
       default: return Globe;
