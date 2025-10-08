@@ -23,13 +23,13 @@ const Projects = () => {
       category: 'Lead Frontend'
     },
     {
-      title: 'Task Management App',
-      description: 'Collaborative project management tool with real-time updates, drag-and-drop interface, and team collaboration features.',
-      image: 'https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg',
-      technologies: ['React', 'Redux', 'Socket.io', 'Express', 'MongoDB'],
-      liveUrl: '#',
+      title: 'Solar Lead Form Widget',
+      description: 'Reusable solar lead generation widget deployed across major energy platforms including SaveOnEnergy.com. Built with React and TypeScript for seamless integration and optimal user experience.',
+      image: '/solar-lead-form.png',
+      technologies: ['React', 'TypeScript', 'JavaScript', 'CSS'],
+      liveUrl: 'https://www.saveonenergy.com/',
       githubUrl: '#',
-      category: 'Web App'
+      category: 'Widget'
     },
     {
       title: 'Portfolio Redesign',
@@ -61,6 +61,7 @@ const Projects = () => {
   ];
 
   const categories = ['All', 'Lead Frontend', 'Design System', 'Web App', 'Design + Dev', 'Mobile', 'Data Viz'];
+  const categories = ['All', 'Lead Frontend', 'Widget', 'Design System', 'Web App', 'Design + Dev', 'Mobile', 'Data Viz'];
   const [selectedCategory, setSelectedCategory] = React.useState('All');
 
   const filteredProjects = selectedCategory === 'All' 
