@@ -35,7 +35,7 @@ const Projects = () => {
     {
       title: 'UltraCrew',
       description: 'Ultramarathon crew logistics management application. Clean, intuitive interface for managing race details, runner information, and crew coordination with comprehensive form validation and user-friendly design.',
-      image: '/crew-app-image.png',
+      image: '/crew-image-2.png',
       technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Form Validation'],
       liveUrl: '#',
       githubUrl: '#',
