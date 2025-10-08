@@ -5,11 +5,11 @@ import { ExternalLink, Github, Palette, Code, Smartphone, Globe } from 'lucide-r
 const Projects = () => {
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A modern e-commerce solution built with React, TypeScript, and Stripe integration. Features include real-time inventory, advanced search, and responsive design.',
-      image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg',
-      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Stripe', 'Node.js'],
-      liveUrl: '#',
+      title: 'Tri Eagle Energy Marketplace',
+      description: 'Lead frontend developer for shop.trieagleenergy.com, a comprehensive energy marketplace platform. Built scalable web application with modern React architecture and responsive design.',
+      image: 'https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg',
+      technologies: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS'],
+      liveUrl: 'https://shop.trieagleenergy.com/',
       githubUrl: '#',
       category: 'Full-Stack'
     },
