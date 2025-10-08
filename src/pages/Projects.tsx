@@ -15,7 +15,7 @@ const Projects = () => {
     },
     {
       title: 'Energy Harbor Marketplace',
-      description: 'Lead frontend developer for shop.energyharbor.com, a comprehensive clean energy marketplace platform. Built scalable web application with modern React architecture and responsive design.',
+      description: 'Lead frontend developer for shop.energyharbor.com, serving customers across Midwest and Northeast states. Developed a comprehensive clean energy marketplace focused on carbon-free energy plans with intuitive user experience and seamless plan comparison features.',
       image: '/eh-image.png',
       technologies: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS'],
       liveUrl: 'https://shop.energyharbor.com/',
