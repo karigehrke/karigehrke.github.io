@@ -63,7 +63,7 @@ const Projects = () => {
     }
   ];
 
-  const categories = ['All', 'Lead Frontend', 'Widget', 'Design System', 'Web App', 'Design + Dev', 'Mobile', 'Data Viz'];
+  const categories = ['All', 'Lead Frontend', 'Frontend', 'Widget', 'Web App'];
   const [selectedCategory, setSelectedCategory] = React.useState('All');
 
   const filteredProjects = selectedCategory === 'All' 
