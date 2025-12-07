@@ -7,7 +7,7 @@ const Projects = () => {
     {
       title: 'TriEagle Energy Marketplace',
       description: 'Lead frontend developer for shop.trieagleenergy.com, a comprehensive energy marketplace platform. Built scalable web application with modern React architecture and responsive design.',
-      image: 'https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/tee-image.png',
       technologies: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'Cypress'],
       liveUrl: 'https://shop.trieagleenergy.com/',
       githubUrl: '#',
@@ -16,7 +16,7 @@ const Projects = () => {
     {
       title: 'Energy Harbor Marketplace',
       description: 'Lead frontend developer for shop.energyharbor.com, serving customers across Midwest and Northeast states. Developed a comprehensive clean energy marketplace focused on carbon-free energy plans with intuitive user experience and seamless plan comparison features.',
-      image: 'https://images.pexels.com/photos/433308/pexels-photo-433308.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/eh-image.png',
       technologies: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'Cypress'],
       liveUrl: 'https://shop.energyharbor.com/',
       githubUrl: '#',
@@ -25,7 +25,7 @@ const Projects = () => {
     {
       title: 'Solar Lead Form Widget',
       description: 'Reusable solar lead generation widget deployed across major energy platforms including SaveOnEnergy.com. Built with React and TypeScript for seamless integration and optimal user experience.',
-      image: 'https://images.pexels.com/photos/9875414/pexels-photo-9875414.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/solar-lead-form.png',
       technologies: ['React', 'TypeScript', 'JavaScript', 'CSS', 'Nx', 'Easy-Peasy', 'GraphQL'],
       liveUrl: 'https://www.saveonenergy.com/solar-energy/solar-estimator/',
       githubUrl: '#',
@@ -34,7 +34,7 @@ const Projects = () => {
     {
       title: 'UltraCrew',
       description: 'Ultramarathon crew logistics management application. Clean, intuitive interface for managing race details, runner information, and crew coordination with comprehensive form validation and user-friendly design.',
-      image: 'https://images.pexels.com/photos/2402777/pexels-photo-2402777.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/crew-app-image.png',
       technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Form Validation'],
       liveUrl: '#',
       githubUrl: '#',
@@ -44,7 +44,7 @@ const Projects = () => {
     {
       title: 'PlantCare',
       description: 'Plant care management application with intuitive dashboard, watering schedules, and plant health tracking. Features clean UI design with status indicators and personalized care reminders.',
-      image: 'https://images.pexels.com/photos/1084199/pexels-photo-1084199.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/plant-care-image.png',
       technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Local Storage', 'PWA'],
       liveUrl: '#',
       githubUrl: '#',
@@ -54,7 +54,7 @@ const Projects = () => {
     {
       title: 'SaveOnEnergy.com',
       description: 'Partnered on full site rebuild of major energy marketplace platform. Built with modern React architecture, Next.js, TypeScript, and Tailwind CSS to serve millions of users searching for energy plans.',
-      image: 'https://images.pexels.com/photos/1036936/pexels-photo-1036936.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/soe-image.png',
       technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
       liveUrl: 'https://www.saveonenergy.com/',
       githubUrl: '#',
