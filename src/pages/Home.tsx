@@ -1,153 +1,250 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Github, Linkedin, Mail, Download } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
-  const fadeInUp = {
-    initial: { opacity: 0, y: 60 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
-  };
-
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-slate-900 to-purple-900/20"></div>
-        
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <motion.h1 
-            className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-amber-400 bg-clip-text text-transparent"
-            {...fadeInUp}
-          >
-            Kari Gehrke
-          </motion.h1>
-          
-          <motion.h2 
-            className="text-2xl md:text-4xl font-semibold mb-6 text-slate-200"
-            {...fadeInUp}
-            transition={{ delay: 0.1 }}
-          >
-            Frontend Engineer
-          </motion.h2>
-          
-          <motion.p 
-            className="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed"
-            {...fadeInUp}
-            transition={{ delay: 0.3 }}
-          >
-            Bridging the gap between beautiful design and powerful functionality
-          </motion.p>
-          
-          <motion.p 
-            className="text-lg text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed"
-            {...fadeInUp}
-            transition={{ delay: 0.5 }}
-          >
-            Former graphic designer turned frontend engineer, bringing a unique perspective to web development 
-            with an eye for detail and user experience.
-          </motion.p>
+    <div className="min-h-screen bg-stone-950 text-stone-100">
 
-          <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
-            {...fadeInUp}
-            transition={{ delay: 0.7 }}
-          >
-            <Link 
-              to="/projects"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 border-2 border-blue-600 hover:border-blue-700 w-full sm:min-w-[160px] sm:w-auto h-[50px] flex items-center justify-center"
-            >
-              View My Work
-            </Link>
-            
-            <Link 
-              to="/contact"
-              className="bg-transparent border-2 border-slate-500 hover:border-white text-slate-300 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 w-full sm:min-w-[160px] sm:w-auto h-[50px] flex items-center justify-center"
-            >
-              Get In Touch
-            </Link>
+      {/* Hero */}
+      <section className="min-h-screen flex flex-col justify-end relative overflow-hidden px-6 lg:px-12 pb-16 pt-32">
 
-            <button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-amber-500/25 border-2 border-amber-600 hover:border-amber-700 w-full sm:min-w-[160px] sm:w-auto h-[50px] flex items-center justify-center gap-2">
-              <Download className="h-4 w-4" />
-              Resume
-            </button>
-          </motion.div>
-
-          <motion.div 
-            className="flex justify-center gap-6"
-            {...fadeInUp}
-            transition={{ delay: 0.9 }}
-          >
-            <a href="https://github.com/karigehrke" target="_blank" rel="noopener noreferrer" 
-               className="text-slate-400 hover:text-white transition-colors p-2 hover:scale-110 transform">
-              <Github className="h-6 w-6" />
-            </a>
-            <a href="https://www.linkedin.com/in/kari-gehrke/" target="_blank" rel="noopener noreferrer" 
-               className="text-slate-400 hover:text-white transition-colors p-2 hover:scale-110 transform">
-              <Linkedin className="h-6 w-6" />
-            </a>
-            <a href="mailto:kari.gehrke@example.com" 
-               className="text-slate-400 hover:text-white transition-colors p-2 hover:scale-110 transform">
-              <Mail className="h-6 w-6" />
-            </a>
-          </motion.div>
+        {/* Large background number */}
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 select-none pointer-events-none">
+          <span className="text-[28vw] font-black text-stone-900 leading-none tracking-tighter">KG</span>
         </div>
 
-        <motion.div 
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-        >
-          <ArrowDown className="h-6 w-6 text-slate-400" />
-        </motion.div>
+        {/* Thin vertical rule */}
+        <div className="absolute left-6 lg:left-12 top-0 bottom-0 w-px bg-stone-800" />
+
+        <div className="max-w-7xl mx-auto w-full relative z-10">
+          <div className="grid lg:grid-cols-12 gap-0 items-end">
+
+            {/* Left: role label */}
+            <div className="lg:col-span-3 mb-8 lg:mb-0">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                className="space-y-2"
+              >
+                <p className="text-xs tracking-[0.3em] uppercase text-amber-400 font-medium">Design Engineer</p>
+                <p className="text-xs tracking-[0.2em] uppercase text-stone-500">Frontend · UI/UX · Systems</p>
+              </motion.div>
+            </div>
+
+            {/* Center/Right: name */}
+            <div className="lg:col-span-9">
+              <motion.h1
+                className="text-[13vw] lg:text-[10vw] font-black leading-[0.88] tracking-tighter text-stone-100"
+                initial={{ opacity: 0, y: 80 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              >
+                Kari<br />
+                <span className="text-stroke">Gehrke</span>
+              </motion.h1>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <motion.div
+            className="h-px bg-stone-800 mt-12 mb-10"
+            initial={{ scaleX: 0, originX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          />
+
+          {/* Bottom row */}
+          <div className="grid lg:grid-cols-12 gap-8 items-end">
+            <motion.div
+              className="lg:col-span-5"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+            >
+              <p className="text-stone-400 leading-relaxed text-base">
+                Former graphic designer turned frontend engineer.
+                I build interfaces that are as considered in code as they are in craft.
+              </p>
+            </motion.div>
+
+            <div className="lg:col-span-3 lg:col-start-7">
+              <motion.div
+                className="flex flex-col gap-3"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1 }}
+              >
+                <Link
+                  to="/projects"
+                  className="group flex items-center justify-between border border-stone-700 hover:border-amber-400 px-5 py-3 transition-all duration-300 hover:bg-amber-400/5"
+                >
+                  <span className="text-xs tracking-[0.15em] uppercase font-semibold text-stone-300 group-hover:text-amber-400 transition-colors">View Work</span>
+                  <ArrowRight className="h-4 w-4 text-stone-500 group-hover:text-amber-400 group-hover:translate-x-1 transition-all duration-300" />
+                </Link>
+                <Link
+                  to="/contact"
+                  className="group flex items-center justify-between border border-stone-800 hover:border-stone-600 px-5 py-3 transition-all duration-300"
+                >
+                  <span className="text-xs tracking-[0.15em] uppercase font-semibold text-stone-500 group-hover:text-stone-300 transition-colors">Get In Touch</span>
+                  <ArrowRight className="h-4 w-4 text-stone-600 group-hover:text-stone-400 group-hover:translate-x-1 transition-all duration-300" />
+                </Link>
+              </motion.div>
+            </div>
+
+            <motion.div
+              className="lg:col-span-2 lg:col-start-11 flex items-center justify-end gap-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 1.2 }}
+            >
+              <a href="https://github.com/karigehrke" target="_blank" rel="noopener noreferrer"
+                className="text-stone-600 hover:text-stone-300 transition-colors">
+                <Github className="h-5 w-5" />
+              </a>
+              <a href="https://www.linkedin.com/in/kari-gehrke/" target="_blank" rel="noopener noreferrer"
+                className="text-stone-600 hover:text-stone-300 transition-colors">
+                <Linkedin className="h-5 w-5" />
+              </a>
+              <button className="text-stone-600 hover:text-stone-300 transition-colors">
+                <Download className="h-5 w-5" />
+              </button>
+            </motion.div>
+          </div>
+        </div>
       </section>
 
-      {/* Skills Preview */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <motion.h2 
-            className="text-3xl md:text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            Skills & Technologies
-          </motion.h2>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { name: 'React', level: 90 },
-              { name: 'TypeScript', level: 85 },
-              { name: 'Tailwind CSS', level: 95 },
-              { name: 'Node.js', level: 80 },
-              { name: 'Figma', level: 95 },
-              { name: 'Adobe Creative Suite', level: 90 },
-              { name: 'UI/UX Design', level: 95 },
-              { name: 'Responsive Design', level: 95 }
-            ].map((skill, index) => (
-              <motion.div
-                key={skill.name}
-                className="text-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+      {/* Marquee strip */}
+      <div className="border-y border-stone-800 overflow-hidden py-4">
+        <motion.div
+          className="flex gap-12 whitespace-nowrap"
+          animate={{ x: ['0%', '-50%'] }}
+          transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
+        >
+          {[...Array(4)].flatMap(() => [
+            'React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Figma',
+            'Design Systems', 'UI Engineering', 'Motion Design', 'GraphQL', 'Node.js',
+          ]).map((item, i) => (
+            <span key={i} className="text-xs tracking-[0.25em] uppercase text-stone-600 font-medium">
+              {item} <span className="text-amber-800 mx-4">·</span>
+            </span>
+          ))}
+        </motion.div>
+      </div>
+
+      {/* Capabilities */}
+      <section className="py-32 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-12 gap-16">
+
+            {/* Label */}
+            <div className="lg:col-span-3">
+              <motion.p
+                className="text-xs tracking-[0.3em] uppercase text-stone-600 font-medium sticky top-32"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
               >
-                <div className="bg-slate-800 p-6 rounded-lg hover:bg-slate-700 transition-colors">
-                  <h3 className="font-semibold text-white mb-2">{skill.name}</h3>
-                  <div className="w-full bg-slate-600 rounded-full h-2">
-                    <motion.div 
-                      className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full"
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.level}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1.5, delay: index * 0.1 }}
-                    ></motion.div>
+                What I do
+              </motion.p>
+            </div>
+
+            {/* Items — intentionally unequal widths */}
+            <div className="lg:col-span-9 space-y-0">
+              {[
+                {
+                  num: '01',
+                  title: 'UI Engineering',
+                  desc: 'Building robust, performant component systems and interfaces that hold up at scale. Design-aware code that bridges the gap between Figma and production.',
+                  wide: true
+                },
+                {
+                  num: '02',
+                  title: 'Design Systems',
+                  desc: 'Crafting consistent visual languages — tokens, patterns, documentation — that make teams move faster without sacrificing quality.',
+                  wide: false
+                },
+                {
+                  num: '03',
+                  title: 'Interaction Design',
+                  desc: 'Thoughtful micro-interactions and motion that make interfaces feel alive without getting in the way.',
+                  wide: true
+                },
+              ].map((item, i) => (
+                <motion.div
+                  key={item.num}
+                  className={`group border-t border-stone-800 py-10 grid grid-cols-12 gap-6 hover:border-stone-600 transition-colors duration-300 cursor-default`}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                >
+                  <div className="col-span-1">
+                    <span className="text-xs text-stone-700 font-mono">{item.num}</span>
                   </div>
+                  <div className={`${item.wide ? 'col-span-7' : 'col-span-5'}`}>
+                    <h3 className="text-2xl font-bold text-stone-200 group-hover:text-amber-400 transition-colors duration-300 mb-3">{item.title}</h3>
+                    <p className="text-stone-500 leading-relaxed text-sm">{item.desc}</p>
+                  </div>
+                  <div className="col-span-1 col-start-12 flex items-center justify-end">
+                    <ArrowRight className="h-4 w-4 text-stone-800 group-hover:text-amber-400 group-hover:translate-x-1 transition-all duration-300" />
+                  </div>
+                </motion.div>
+              ))}
+              <div className="border-t border-stone-800" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured project teaser */}
+      <section className="pb-32 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-4">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-xs tracking-[0.3em] uppercase text-stone-600 font-medium mb-4">Selected Work</p>
+                <h2 className="text-4xl lg:text-5xl font-black text-stone-200 leading-tight mb-6">
+                  Energy<br />
+                  Platforms<br />
+                  <span className="text-stone-600">at Scale</span>
+                </h2>
+                <Link
+                  to="/projects"
+                  className="group inline-flex items-center gap-3 text-xs tracking-[0.15em] uppercase font-semibold text-amber-400 hover:text-amber-300 transition-colors"
+                >
+                  See all work
+                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </motion.div>
+            </div>
+
+            <div className="lg:col-span-8 lg:col-start-5">
+              <motion.div
+                className="relative aspect-[16/9] overflow-hidden bg-stone-900"
+                initial={{ opacity: 0, scale: 0.97 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <img
+                  src="/tee-image.png"
+                  alt="TriEagle Energy Marketplace"
+                  className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500 hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-950/60 to-transparent" />
+                <div className="absolute bottom-6 left-6">
+                  <p className="text-xs tracking-[0.2em] uppercase text-amber-400 mb-1">Lead Frontend</p>
+                  <p className="text-xl font-bold text-white">TriEagle Energy Marketplace</p>
                 </div>
               </motion.div>
-            ))}
+            </div>
           </div>
         </div>
       </section>

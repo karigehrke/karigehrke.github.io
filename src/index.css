@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #0c0a09;
+    color: #e7e5e4;
+  }
+
+  ::selection {
+    background-color: #f59e0b;
+    color: #0c0a09;
+  }
+}
+
+@layer utilities {
+  .text-stroke {
+    -webkit-text-stroke: 2px #e7e5e4;
+    color: transparent;
+  }
+
+  .text-stroke-amber {
+    -webkit-text-stroke: 2px #f59e0b;
+    color: transparent;
+  }
+}

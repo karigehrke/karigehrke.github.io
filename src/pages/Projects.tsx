@@ -1,247 +1,261 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ExternalLink, Github, Palette, Code, Smartphone, Globe } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ExternalLink, ArrowRight } from 'lucide-react';
 
-const Projects = () => {
-  const projects = [
-    {
-      title: 'TriEagle Energy Marketplace',
-      description: 'Lead frontend developer for shop.trieagleenergy.com, a comprehensive energy marketplace platform. Built scalable web application with modern React architecture and responsive design.',
-      image: '/tee-image.png',
-      technologies: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'Cypress'],
-      liveUrl: 'https://shop.trieagleenergy.com/',
-      githubUrl: '#',
-      category: 'Lead Frontend'
-    },
-    {
-      title: 'Energy Harbor Marketplace',
-      description: 'Lead frontend developer for shop.energyharbor.com, serving customers across Midwest and Northeast states. Developed a comprehensive clean energy marketplace focused on carbon-free energy plans with intuitive user experience and seamless plan comparison features.',
-      image: '/eh-image.png',
-      technologies: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'Cypress'],
-      liveUrl: 'https://shop.energyharbor.com/',
-      githubUrl: '#',
-      category: 'Lead Frontend'
-    },
-    {
-      title: 'Solar Lead Form Widget',
-      description: 'Reusable solar lead generation widget deployed across major energy platforms including SaveOnEnergy.com. Built with React and TypeScript for seamless integration and optimal user experience.',
-      image: '/solar-lead-form.png',
-      technologies: ['React', 'TypeScript', 'JavaScript', 'CSS', 'Nx', 'Easy-Peasy', 'GraphQL'],
-      liveUrl: 'https://www.saveonenergy.com/solar-energy/solar-estimator/',
-      githubUrl: '#',
-      category: 'Widget'
-    },
-    {
-      title: 'UltraCrew',
-      description: 'Ultramarathon crew logistics management application. Clean, intuitive interface for managing race details, runner information, and crew coordination with comprehensive form validation and user-friendly design.',
-      image: '/crew-app-image.png',
-      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Form Validation'],
-      liveUrl: '#',
-      githubUrl: '#',
-      category: 'Web App',
-      isWIP: true
-    },
-    {
-      title: 'PlantCare',
-      description: 'Plant care management application with intuitive dashboard, watering schedules, and plant health tracking. Features clean UI design with status indicators and personalized care reminders.',
-      image: '/plant-care-image.png',
-      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Local Storage', 'PWA'],
-      liveUrl: '#',
-      githubUrl: '#',
-      category: 'Web App',
-      isWIP: true
-    },
-    {
-      title: 'SaveOnEnergy.com',
-      description: 'Partnered on full site rebuild of major energy marketplace platform. Built with modern React architecture, Next.js, TypeScript, and Tailwind CSS to serve millions of users searching for energy plans.',
-      image: '/soe-image.png',
-      technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
-      liveUrl: 'https://www.saveonenergy.com/',
-      githubUrl: '#',
-      category: 'Frontend'
-    }
-  ];
+type Project = {
+  title: string;
+  description: string;
+  image: string;
+  technologies: string[];
+  liveUrl: string;
+  category: string;
+  isWIP?: boolean;
+  role: string;
+  year: string;
+  size: 'large' | 'medium' | 'small';
+};
 
-  const categories = ['All', 'Lead Frontend', 'Frontend', 'Widget', 'Web App'];
-  const [selectedCategory, setSelectedCategory] = React.useState('All');
+const projects: Project[] = [
+  {
+    title: 'TriEagle Energy Marketplace',
+    description: 'Lead frontend developer for a comprehensive energy marketplace. Built scalable architecture with Next.js, TypeScript, and a full Cypress test suite for production confidence.',
+    image: '/tee-image.png',
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Cypress'],
+    liveUrl: 'https://shop.trieagleenergy.com/',
+    category: 'Lead Frontend',
+    role: 'Lead Frontend',
+    year: '2021–Pres.',
+    size: 'large',
+  },
+  {
+    title: 'Energy Harbor Marketplace',
+    description: 'Clean energy marketplace serving Midwest and Northeast states. Focused on carbon-free plan comparison and seamless UX for a complex regulatory environment.',
+    image: '/eh-image.png',
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Cypress'],
+    liveUrl: 'https://shop.energyharbor.com/',
+    category: 'Lead Frontend',
+    role: 'Lead Frontend',
+    year: '2021–Pres.',
+    size: 'medium',
+  },
+  {
+    title: 'SaveOnEnergy.com',
+    description: 'Partnered on a full site rebuild of a major energy marketplace serving millions of users. Contributed across the stack using React, Next.js, TypeScript, and Tailwind.',
+    image: '/soe-image.png',
+    technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
+    liveUrl: 'https://www.saveonenergy.com/',
+    category: 'Frontend',
+    role: 'Frontend Engineer',
+    year: '2022',
+    size: 'small',
+  },
+  {
+    title: 'Solar Lead Form Widget',
+    description: 'Reusable solar estimator widget deployed across major energy platforms. Optimized for conversion with clean form UX and seamless host-page integration.',
+    image: '/solar-lead-form.png',
+    technologies: ['React', 'TypeScript', 'Nx', 'Easy-Peasy', 'GraphQL'],
+    liveUrl: 'https://www.saveonenergy.com/solar-energy/solar-estimator/',
+    category: 'Widget',
+    role: 'Engineer',
+    year: '2022',
+    size: 'medium',
+  },
+  {
+    title: 'UltraCrew',
+    description: 'Ultramarathon crew logistics app. Intuitive interface for race details, runner coordination, and crew management with thorough form validation.',
+    image: '/crew-app-image.png',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS'],
+    liveUrl: '#',
+    category: 'Web App',
+    role: 'Designer + Engineer',
+    year: 'WIP',
+    size: 'large',
+    isWIP: true,
+  },
+  {
+    title: 'PlantCare',
+    description: 'Plant care management dashboard with watering schedules, health tracking, and personalized care reminders. PWA-ready for mobile use.',
+    image: '/plant-care-image.png',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'PWA'],
+    liveUrl: '#',
+    category: 'Web App',
+    role: 'Designer + Engineer',
+    year: 'WIP',
+    size: 'small',
+    isWIP: true,
+  },
+];
 
-  const filteredProjects = selectedCategory === 'All' 
-    ? projects 
-    : projects.filter(project => project.category === selectedCategory);
+const categories = ['All', 'Lead Frontend', 'Frontend', 'Widget', 'Web App'];
 
-  const getCategoryIcon = (category: string) => {
-    switch (category) {
-      case 'Lead Frontend': return Code;
-      case 'Design System': return Palette;
-      case 'Mobile': return Smartphone;
-      default: return Globe;
-    }
-  };
+const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
+  const isLarge = project.size === 'large';
+  const isMedium = project.size === 'medium';
 
   return (
-    <div className="pt-16">
-      {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <motion.h1 
-            className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
-            initial={{ opacity: 0, y: 60 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+    <motion.article
+      layout
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 20 }}
+      transition={{ duration: 0.5, delay: index * 0.08 }}
+      className={`group relative flex flex-col ${isLarge ? 'lg:col-span-2' : isMedium ? 'lg:col-span-1' : 'lg:col-span-1'}`}
+    >
+      {/* Image */}
+      <div className={`relative overflow-hidden bg-stone-900 ${isLarge ? 'aspect-[16/9]' : 'aspect-[4/3]'}`}>
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-75 group-hover:opacity-95"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent" />
+
+        {/* WIP badge */}
+        {project.isWIP && (
+          <div className="absolute top-4 left-4 px-2 py-1 bg-amber-400 text-stone-950 text-xs font-bold tracking-[0.1em] uppercase">
+            WIP
+          </div>
+        )}
+
+        {/* Live link overlay */}
+        {project.liveUrl !== '#' && (
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute top-4 right-4 p-2 bg-stone-950/80 text-stone-400 hover:text-amber-400 opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-stone-900"
           >
-            My Projects
-          </motion.h1>
-          
-          <motion.p 
-            className="text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 60 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            A showcase of my journey from design concepts to fully functional applications, 
-            demonstrating both creative vision and technical expertise.
-          </motion.p>
+            <ExternalLink className="h-4 w-4" />
+          </a>
+        )}
+
+        {/* Bottom overlay metadata */}
+        <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+          <div className="flex items-end justify-between">
+            <div>
+              <p className="text-xs tracking-[0.2em] uppercase text-amber-400 mb-1">{project.role}</p>
+              <h3 className={`font-black text-white leading-tight ${isLarge ? 'text-2xl lg:text-3xl' : 'text-xl'}`}>{project.title}</h3>
+            </div>
+            <span className="text-xs text-stone-500 font-mono shrink-0 ml-4">{project.year}</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Card body */}
+      <div className="pt-5 pb-6 border-b border-stone-800">
+        <p className="text-stone-500 text-sm leading-relaxed mb-4">{project.description}</p>
+        <div className="flex flex-wrap gap-2">
+          {project.technologies.map((tech) => (
+            <span key={tech} className="text-xs text-stone-600 border border-stone-800 px-2 py-1 font-mono">
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+    </motion.article>
+  );
+};
+
+const Projects = () => {
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
+  const filtered = selectedCategory === 'All'
+    ? projects
+    : projects.filter(p => p.category === selectedCategory);
+
+  return (
+    <div className="min-h-screen bg-stone-950 text-stone-100 pt-16">
+
+      {/* Header */}
+      <section className="px-6 lg:px-12 pt-20 pb-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-12 gap-8 items-end">
+            <div className="lg:col-span-7">
+              <motion.p
+                className="text-xs tracking-[0.3em] uppercase text-stone-600 mb-4"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.1 }}
+              >
+                Selected Work
+              </motion.p>
+              <motion.h1
+                className="text-5xl lg:text-7xl font-black tracking-tighter text-stone-100 leading-none"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                Projects
+              </motion.h1>
+            </div>
+            <motion.div
+              className="lg:col-span-5"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              <p className="text-stone-500 leading-relaxed">
+                A range of work spanning energy platforms, personal tools, and widgets — each built with an equal eye on design and engineering.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Category Filter */}
-      <section className="px-4 mb-16">
-        <div className="max-w-6xl mx-auto">
-          <motion.div 
-            className="flex flex-wrap justify-center gap-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-          >
-            {categories.map((category) => (
+      {/* Filter */}
+      <section className="px-6 lg:px-12 mb-16">
+        <div className="max-w-7xl mx-auto border-t border-stone-800 pt-8">
+          <div className="flex flex-wrap gap-2">
+            {categories.map((cat) => (
               <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-2 rounded-full font-semibold transition-all duration-200 ${
-                  selectedCategory === category
-                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/25'
-                    : 'bg-slate-700 text-slate-300 hover:bg-slate-600 hover:text-white'
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                className={`text-xs tracking-[0.15em] uppercase font-semibold px-4 py-2 border transition-all duration-200 ${
+                  selectedCategory === cat
+                    ? 'border-amber-400 text-amber-400 bg-amber-400/5'
+                    : 'border-stone-800 text-stone-600 hover:border-stone-600 hover:text-stone-300'
                 }`}
               >
-                {category}
+                {cat}
               </button>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Projects Grid */}
-      <section className="px-4 pb-20">
-        <div className="max-w-6xl mx-auto">
-          <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-            layout
-          >
-            {filteredProjects.map((project, index) => {
-              const IconComponent = getCategoryIcon(project.category);
-              return (
-                <motion.div
-                  key={project.title}
-                  className="bg-slate-800 rounded-lg overflow-hidden hover:bg-slate-700 transition-all duration-300 group"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  whileHover={{ scale: 1.02 }}
-                  layout
-                >
-                  <div className="relative overflow-hidden">
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute top-4 right-4 flex gap-2">
-                      {project.isWIP && (
-                        <div className="bg-amber-500/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                          <span className="text-xs font-semibold text-white">WIP</span>
-                        </div>
-                      )}
-                      <div className="bg-slate-900/80 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-2">
-                        <IconComponent className="h-4 w-4 text-blue-400" />
-                        <span className="text-xs font-semibold text-white">{project.category}</span>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-white mb-3">{project.title}</h3>
-                    <p className="text-slate-400 mb-4 leading-relaxed text-sm">{project.description}</p>
-                    
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.technologies.map((tech) => (
-                        <span 
-                          key={tech}
-                          className="bg-slate-700 text-slate-300 px-2 py-1 rounded text-xs font-medium"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                    
-                    <div className="flex gap-4">
-                      <a 
-                        href={project.liveUrl}
-                        className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors font-medium text-sm"
-                      >
-                        <ExternalLink className="h-4 w-4" />
-                        Live Demo
-                      </a>
-                      <a 
-                        href={project.githubUrl}
-                        className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors font-medium text-sm"
-                      >
-                        <Github className="h-4 w-4" />
-                        Code
-                      </a>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
+      {/* Asymmetric project grid */}
+      <section className="px-6 lg:px-12 pb-32">
+        <div className="max-w-7xl mx-auto">
+          <AnimatePresence mode="popLayout">
+            <motion.div layout className="grid lg:grid-cols-3 gap-10">
+              {filtered.map((project, i) => (
+                <ProjectCard key={project.title} project={project} index={i} />
+              ))}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-20 px-4 bg-slate-800/50">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.h2 
-            className="text-3xl md:text-4xl font-bold mb-6 text-white"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            Like what you see?
-          </motion.h2>
-          
-          <motion.p 
-            className="text-xl text-slate-300 mb-8 leading-relaxed"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            I'm always excited to work on new projects and collaborate with amazing teams.
-          </motion.p>
-          
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-          >
-            <a 
-              href="/contact"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 inline-block"
-            >
-              Let's Work Together
-            </a>
-          </motion.div>
+      {/* CTA */}
+      <section className="px-6 lg:px-12 pb-32">
+        <div className="max-w-7xl mx-auto border-t border-stone-800 pt-16">
+          <div className="grid lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-6">
+              <h2 className="text-3xl lg:text-5xl font-black text-stone-200 leading-tight">
+                Want to build<br />
+                something together?
+              </h2>
+            </div>
+            <div className="lg:col-span-3 lg:col-start-10">
+              <a
+                href="/contact"
+                className="group flex items-center justify-between border border-stone-700 hover:border-amber-400 px-6 py-4 transition-all duration-300 hover:bg-amber-400/5"
+              >
+                <span className="text-xs tracking-[0.15em] uppercase font-semibold text-stone-300 group-hover:text-amber-400 transition-colors">Get in touch</span>
+                <ArrowRight className="h-4 w-4 text-stone-500 group-hover:text-amber-400 group-hover:translate-x-1 transition-all duration-300" />
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </div>
