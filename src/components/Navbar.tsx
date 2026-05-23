@@ -39,7 +39,8 @@ const Navbar = () => {
                 key={item.path}
                 to={item.path}
                 className={`text-xs tracking-[0.15em] uppercase font-medium transition-all duration-200 relative group ${
-                  isActive(item.path) ? 'text-amber-400' : 'text-stone-400 hover:text-stone-100'
+                  isActive(item.path) ? 'text-amber-400' : 'text-stone-300 hover:text-stone-100'
+                  /* stone-300 on transparent/stone-950 = ~10.5:1 ✅ */
                 }`}
               >
                 {item.label}
@@ -69,7 +70,8 @@ const Navbar = () => {
                   to={item.path}
                   onClick={() => setIsOpen(false)}
                   className={`block px-4 py-3 text-xs tracking-[0.15em] uppercase font-medium transition-colors ${
-                    isActive(item.path) ? 'text-amber-400' : 'text-stone-400 hover:text-white'
+                    isActive(item.path) ? 'text-amber-400' : 'text-stone-300 hover:text-white'
+                    /* stone-300 on stone-950 = ~10.5:1 ✅ */
                   }`}
                 >
                   {item.label}
