@@ -1,29 +1,7 @@
-import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Send, Github, Linkedin, CheckCircle, ArrowRight } from 'lucide-react';
+import { Mail, MapPin, Github, Linkedin, ArrowRight } from 'lucide-react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setIsSubmitted(false);
-    }, 4000);
-  };
-
   return (
     <div className="min-h-screen bg-ink text-fg pt-16">
 
@@ -77,112 +55,30 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-16">
 
-            {/* Form */}
+            {/* Email */}
             <motion.div
               className="lg:col-span-7"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              {isSubmitted ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="flex flex-col items-start py-16"
-                >
-                  <CheckCircle className="h-12 w-12 text-overlap mb-6" />
-                  <h3 className="text-2xl font-bold text-fg mb-2">Message sent.</h3>
-                  <p className="text-fg-soft">I'll be in touch soon.</p>
-                </motion.div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-0">
-                  <div className="grid md:grid-cols-2 gap-0 border-t border-line">
-                    <div className="border-b border-r border-line">
-                      <label htmlFor="name" className="block text-xs tracking-[0.15em] uppercase text-muted px-4 pt-4 pb-1">
-                        Name
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        required
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        className="w-full bg-transparent px-4 pb-4 pt-1 text-fg placeholder-faint focus:bg-surface focus-visible:-outline-offset-2 transition-colors text-sm"
-                        placeholder="Your name"
-                      />
-                    </div>
-                    <div className="border-b border-line">
-                      <label htmlFor="email" className="block text-xs tracking-[0.15em] uppercase text-muted px-4 pt-4 pb-1">
-                        Email
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        className="w-full bg-transparent px-4 pb-4 pt-1 text-fg placeholder-faint focus:bg-surface focus-visible:-outline-offset-2 transition-colors text-sm"
-                        placeholder="your@email.com"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="border-b border-line">
-                    <label htmlFor="subject" className="block text-xs tracking-[0.15em] uppercase text-muted px-4 pt-4 pb-1">
-                      Subject
-                    </label>
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      required
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                      className="w-full bg-transparent px-4 pb-4 pt-1 text-fg placeholder-faint focus:bg-surface focus-visible:-outline-offset-2 transition-colors text-sm"
-                      placeholder="Project inquiry, collaboration, etc."
-                    />
-                  </div>
-
-                  <div className="border-b border-line">
-                    <label htmlFor="message" className="block text-xs tracking-[0.15em] uppercase text-muted px-4 pt-4 pb-1">
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      required
-                      rows={7}
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      className="w-full bg-transparent px-4 pb-4 pt-1 text-fg placeholder-faint focus:bg-surface focus-visible:-outline-offset-2 transition-colors resize-none text-sm"
-                      placeholder="Tell me about your project..."
-                    />
-                  </div>
-
-                  <div className="pt-6">
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="group flex items-center gap-4 border border-edge hover:border-design px-6 py-4 transition-all duration-300 hover:bg-design/5 disabled:opacity-40 disabled:cursor-not-allowed"
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <div className="w-4 h-4 border border-fg-soft border-t-transparent rounded-full animate-spin" aria-hidden="true" />
-                          <span className="text-xs tracking-[0.15em] uppercase font-semibold text-fg-soft">Sending...</span>
-                        </>
-                      ) : (
-                        <>
-                          <Send className="h-4 w-4 text-fg-soft group-hover:text-design transition-colors" />
-                          <span className="text-xs tracking-[0.15em] uppercase font-semibold text-fg group-hover:text-design transition-colors">Send Message</span>
-                          <ArrowRight className="h-4 w-4 text-muted group-hover:text-design group-hover:translate-x-1 transition-all" />
-                        </>
-                      )}
-                    </button>
-                  </div>
-                </form>
-              )}
+              <p className="text-xs tracking-[0.3em] uppercase text-muted mb-6">Say hello</p>
+              <a
+                href="mailto:kari.gehrke23@gmail.com"
+                className="group block border-t border-b border-line py-10"
+              >
+                <span className="block text-3xl sm:text-4xl xl:text-5xl font-black tracking-tighter text-fg group-hover:text-design transition-colors">
+                  kari.gehrke23<wbr />@gmail.com
+                </span>
+                <span className="mt-6 inline-flex items-center gap-4 border border-edge group-hover:border-design px-6 py-4 transition-all duration-300 group-hover:bg-design/5">
+                  <Mail className="h-4 w-4 text-fg-soft group-hover:text-design transition-colors" aria-hidden="true" />
+                  <span className="text-xs tracking-[0.15em] uppercase font-semibold text-fg group-hover:text-design transition-colors">Email me</span>
+                  <ArrowRight className="h-4 w-4 text-muted group-hover:text-design group-hover:translate-x-1 transition-all" aria-hidden="true" />
+                </span>
+              </a>
+              <p className="mt-6 text-sm text-fg-soft leading-relaxed max-w-md">
+                Tell me a little about the project or role, and I'll get back to you.
+              </p>
             </motion.div>
 
             {/* Right sidebar */}
