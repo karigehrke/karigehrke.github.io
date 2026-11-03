@@ -17,17 +17,18 @@ const Navbar = () => {
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
     { path: '/projects', label: 'Work' },
+    { path: '/lab', label: 'Lab' },
     { path: '/contact', label: 'Contact' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-stone-950/95 backdrop-blur-sm border-b border-stone-800' : 'bg-transparent'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-ink/95 backdrop-blur-sm border-b border-line' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="group">
-            <span className="text-sm font-semibold tracking-[0.2em] uppercase text-stone-200 group-hover:text-amber-400 transition-colors duration-300">
+            <span className="text-sm font-semibold tracking-[0.2em] uppercase text-fg group-hover:text-design transition-colors duration-300">
               Kari Gehrke
             </span>
           </Link>
@@ -38,13 +39,13 @@ const Navbar = () => {
               <Link
                 key={item.path}
                 to={item.path}
+                aria-current={isActive(item.path) ? 'page' : undefined}
                 className={`text-xs tracking-[0.15em] uppercase font-medium transition-all duration-200 relative group ${
-                  isActive(item.path) ? 'text-amber-400' : 'text-stone-300 hover:text-stone-100'
-                  /* stone-300 on transparent/stone-950 = ~10.5:1 ✅ */
+                  isActive(item.path) ? 'text-design' : 'text-fg-soft hover:text-fg'
                 }`}
               >
                 {item.label}
-                <span className={`absolute -bottom-1 left-0 h-px bg-amber-400 transition-all duration-300 ${isActive(item.path) ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+                <span className={`absolute -bottom-1 left-0 h-px bg-design transition-all duration-300 ${isActive(item.path) ? 'w-full' : 'w-0 group-hover:w-full'}`} />
               </Link>
             ))}
           </div>
@@ -53,7 +54,9 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-stone-400 hover:text-white transition-colors p-2"
+              aria-expanded={isOpen}
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
+              className="text-muted hover:text-fg transition-colors p-2"
             >
               {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -62,16 +65,16 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden border-t border-stone-800 bg-stone-950">
+          <div className="md:hidden border-t border-line bg-ink">
             <div className="py-4 space-y-1">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
+                  aria-current={isActive(item.path) ? 'page' : undefined}
                   onClick={() => setIsOpen(false)}
                   className={`block px-4 py-3 text-xs tracking-[0.15em] uppercase font-medium transition-colors ${
-                    isActive(item.path) ? 'text-amber-400' : 'text-stone-300 hover:text-white'
-                    /* stone-300 on stone-950 = ~10.5:1 ✅ */
+                    isActive(item.path) ? 'text-design' : 'text-fg-soft hover:text-fg'
                   }`}
                 >
                   {item.label}

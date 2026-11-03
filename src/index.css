@@ -3,31 +3,74 @@
 @tailwind utilities;
 
 @layer base {
+  /* Two inks and their overprint: design (coral), code (periwinkle), overlap (citron). */
+  :root {
+    --ink: 17 19 29;
+    --surface: 27 30 44;
+    --line: 45 50 72;
+    --edge: 107 114 144;
+    --fg: 245 240 230;
+    --fg-soft: 213 215 227;
+    --muted: 166 172 194;
+    --faint: 141 147 171;
+    --design: 255 122 102;
+    --code: 163 174 255;
+    --overlap: 230 245 107;
+  }
+
   html {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color-scheme: dark;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    background-color: #0c0a09;
-    color: #e7e5e4;
+    background-color: rgb(var(--ink));
+    color: rgb(var(--fg));
   }
 
   ::selection {
-    background-color: #f59e0b;
-    color: #0c0a09;
+    background-color: rgb(var(--overlap));
+    color: rgb(var(--ink));
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--overlap));
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
-@layer utilities {
-  .text-stroke {
-    -webkit-text-stroke: 2px #e7e5e4;
-    color: transparent;
+@layer components {
+  /* Misregistered print: two ink layers that snap into register on hover. */
+  .overprint {
+    position: relative;
+    display: inline-block;
+    isolation: isolate;
+    color: rgb(var(--design));
   }
 
-  .text-stroke-amber {
-    -webkit-text-stroke: 2px #f59e0b;
-    color: transparent;
+  .overprint-layer {
+    position: absolute;
+    inset: 0;
+    color: rgb(var(--code));
+    mix-blend-mode: screen;
+    transform: translate(0.035em, 0.03em);
+    transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+  }
+
+  .overprint:hover .overprint-layer {
+    transform: translate(0, 0);
   }
 }
